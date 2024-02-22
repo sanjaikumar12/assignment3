@@ -1,0 +1,49 @@
+// InvalidAgeException class (checked exception)
+class InvalidAgeException extends Exception {
+    public InvalidAgeException(String message) {
+        super(message);
+    }
+}
+
+// Voter class
+class Voter {
+    private String voterID;
+    private String name;
+    private int age;
+
+    // Parameterized constructor
+    public Voter(String voterID, String name, int age) throws InvalidAgeException {
+        if (age < 18) {
+            throw new InvalidAgeException("Invalid age for Voter");
+        }
+
+        this.voterID = voterID;
+        this.name = name;
+        this.age = age;
+    }
+
+    // Getters and setters
+    public String getVoterID() {
+        return voterID;
+    }
+
+    public void setVoterID(String voterID) {
+        this.voterID = voterID;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public int getAge() {
+        return age;
+    }
+
+    public void setAge(int age) {
+        this.age = age;
+    }
+}
